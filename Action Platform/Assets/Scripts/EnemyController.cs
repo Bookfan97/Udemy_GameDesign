@@ -16,6 +16,11 @@ public class EnemyController : MonoBehaviour {
 
 	private bool moveRight;
 
+	public float knockbackForce;
+	public float knockbackLength;
+	private float knockbackCounter;
+
+	bool knockBack;
 	// Use this for initialization
 	void Start () {
 		myRB = GetComponent<Rigidbody2D>();
@@ -28,7 +33,16 @@ public class EnemyController : MonoBehaviour {
 
 		if(Physics2D.OverlapCircle(wallCheck.position, wallRadius,whatIsWall))
 			moveRight = !moveRight;
-
+		if(knockBack)
+		{
+			knockbackCounter -= Time.deltaTime;
+			myRB.velocity = new Vector2(knockbackForce * transform.localScale.x, myRB.velocity.y);
+			if(knockbackCounter <=0)
+			{
+				knockBack = false;
+			}
+			return;
+		}
 		if(!moveRight)
 		{
 			myRB.velocity = new Vector2(-moveSpeed, myRB.velocity.y);
@@ -47,5 +61,12 @@ public class EnemyController : MonoBehaviour {
 		{
 			other.gameObject.GetComponent<PlayerHealthManager>().HurtPlayer(damageOnTouch);
 		}
+	}
+
+	public void Knockback()
+	{
+		knockbackCounter = knockbackLength;
+		myRB.velocity = new Vector2(knockbackForce * transform.localScale.x, knockbackForce);
+		knockBack = true;
 	}
 }
