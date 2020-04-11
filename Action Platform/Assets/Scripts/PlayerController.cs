@@ -19,6 +19,11 @@ public class PlayerController : MonoBehaviour {
 
 	public bool grounded;
 
+	public AudioSource jumpSound;
+	public AudioSource gunSound;
+
+	public float waitBetweenShots = .5f;
+	private float betweenShotCounter = .5f;
 	// Use this for initialization
 	void Start () {
 		myRB = GetComponent<Rigidbody2D>();
@@ -38,6 +43,7 @@ public class PlayerController : MonoBehaviour {
 		if(Input.GetButtonDown("Jump") && grounded)
 		{
 			myRB.velocity = new Vector2(myRB.velocity.x, jumpSpeed);
+			jumpSound.Play();
 		}
 
 		if(Input.GetAxisRaw("Horizontal") > 0 && transform.localScale.x < 0)
@@ -47,11 +53,27 @@ public class PlayerController : MonoBehaviour {
 		
 		if(Input.GetButtonDown("Fire1"))
 		{
-			Instantiate(bullet, bulletPoint.position, transform.rotation);
+			Shoot();
+		}
+
+		if(Input.GetButton("Fire1"))
+		{
+			betweenShotCounter -= Time.deltaTime;
+			if(betweenShotCounter<=0)
+			{
+				Shoot();
+			}
 		}
 
 		anim.SetFloat("Speed", Mathf.Abs(myRB.velocity.x));
 		anim.SetBool("Grounded", grounded);
+	}
+
+	public void Shoot()
+	{
+		Instantiate(bullet, bulletPoint.position, transform.rotation);
+		gunSound.Play();
+		betweenShotCounter = waitBetweenShots;
 	}
 
 	void OnCollisionEnter2D(Collision2D other)

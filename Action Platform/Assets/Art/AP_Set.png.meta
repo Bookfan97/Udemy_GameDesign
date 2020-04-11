@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 5518f675587a17b4c9174b3330a0fc36
-timeCreated: 1466700927
-licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Player_Head
@@ -30,14 +28,17 @@ TextureImporter:
     21300046: Robot_Dest_ArmBack
     21300048: Robot_Dest_LegFront
     21300050: Robot_Dest_LegBack
-  serializedVersion: 2
+  externalObjects: {}
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
@@ -46,37 +47,59 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 7
-  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -3
   maxTextureSize: 128
   textureSettings:
+    serializedVersion: 2
     filterMode: 0
     aniso: 16
-    mipBias: -1
-    wrapMode: 1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
-  rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings: []
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 128
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: Player_Head
+    - serializedVersion: 2
+      name: Player_Head
       rect:
         serializedVersion: 2
         x: 5
@@ -87,7 +110,16 @@ TextureImporter:
       pivot: {x: 0.4546464, y: 0.05078252}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player_Body
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56126d93d99f7ec49853a88b816c8de2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Body
       rect:
         serializedVersion: 2
         x: 6
@@ -98,7 +130,16 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player_ArmR_Upper
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21e4badad81057c4793e813b4a72af26
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_ArmR_Upper
       rect:
         serializedVersion: 2
         x: 20
@@ -109,7 +150,16 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.9211413}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player_ArmL_Upper
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc69ac4ecf2298047b39e65d7dfac9fb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_ArmL_Upper
       rect:
         serializedVersion: 2
         x: 26
@@ -120,7 +170,16 @@ TextureImporter:
       pivot: {x: 0.47192383, y: 0.90710324}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player_ArmR_Lower
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb4de979e784bd449a16e24fee82f0fe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_ArmR_Lower
       rect:
         serializedVersion: 2
         x: 19
@@ -131,7 +190,16 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.93166924}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player_ArmL_Lower
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 382395daeba36bd44a3d9810f644febc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_ArmL_Lower
       rect:
         serializedVersion: 2
         x: 25
@@ -142,7 +210,16 @@ TextureImporter:
       pivot: {x: 0.4831543, y: 0.9211407}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player_LegR_Upper
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 739fef2e76630b94b980aff4e35cc2ce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_LegR_Upper
       rect:
         serializedVersion: 2
         x: 31
@@ -153,7 +230,16 @@ TextureImporter:
       pivot: {x: 0.47192383, y: 0.89306515}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player_LegR_Lower
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c23b7d33e9fef3c42bc0b02f17ed9c1c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_LegR_Lower
       rect:
         serializedVersion: 2
         x: 31
@@ -164,7 +250,16 @@ TextureImporter:
       pivot: {x: 0.29785234, y: 0.9421978}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player_LegL_Upper
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea3d34dd1981eac418fd1b720f0488f7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_LegL_Upper
       rect:
         serializedVersion: 2
         x: 37
@@ -175,7 +270,16 @@ TextureImporter:
       pivot: {x: 0.5280762, y: 0.90710324}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player_LegL_Lower
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff929b550d3826549a2181d2b80d63e3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_LegL_Lower
       rect:
         serializedVersion: 2
         x: 37
@@ -186,7 +290,16 @@ TextureImporter:
       pivot: {x: 0.31469804, y: 0.9421978}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player_ArmR_Gun
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 100484438166e7c4aaf6c7421001f1e1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_ArmR_Gun
       rect:
         serializedVersion: 2
         x: 28
@@ -197,7 +310,16 @@ TextureImporter:
       pivot: {x: 0.033937328, y: 0.2847502}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Laser_Small
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9920c23896167bd4086c4ab83aa82b5d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Small
       rect:
         serializedVersion: 2
         x: 56
@@ -208,7 +330,16 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Laser_Med
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3157f87d19f4b546ba3572f564e4a1f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Med
       rect:
         serializedVersion: 2
         x: 50
@@ -219,7 +350,16 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: LAser_Big
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da3cea3b05b79754f9428b7b444e5367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LAser_Big
       rect:
         serializedVersion: 2
         x: 47
@@ -230,7 +370,16 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Robot_Head
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5555274b84f979b44b6c0400a2efe0ac
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Head
       rect:
         serializedVersion: 2
         x: 107
@@ -241,7 +390,16 @@ TextureImporter:
       pivot: {x: 0.4999993, y: 0.03611156}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Robot_Body
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b0a5d723524846469c7cead2362abd4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Body
       rect:
         serializedVersion: 2
         x: 108
@@ -252,7 +410,16 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Robot_ArmFront
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1adb6203280c3094c83cd08d41875dd5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_ArmFront
       rect:
         serializedVersion: 2
         x: 97
@@ -263,7 +430,16 @@ TextureImporter:
       pivot: {x: 0.623703, y: 0.96002245}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Robot_ArmBack
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edd50edaa53a6c24ea8d1849efeacab9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_ArmBack
       rect:
         serializedVersion: 2
         x: 88
@@ -274,7 +450,16 @@ TextureImporter:
       pivot: {x: 0.56494427, y: 0.9708462}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Robot_LegFront
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10757e981abc5d94f8d1e58a19c37af1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_LegFront
       rect:
         serializedVersion: 2
         x: 80
@@ -285,7 +470,16 @@ TextureImporter:
       pivot: {x: 0.6558655, y: 0.9596059}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Robot_LegBack
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c59bc3cff4e6fc45a45ed1771b1fcb2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_LegBack
       rect:
         serializedVersion: 2
         x: 74
@@ -296,7 +490,16 @@ TextureImporter:
       pivot: {x: 0.70782167, y: 0.9596059}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Robot_Dest_Head
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b82b1527470494bbed96b17b641f32
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Dest_Head
       rect:
         serializedVersion: 2
         x: 107
@@ -307,7 +510,16 @@ TextureImporter:
       pivot: {x: 0.50787145, y: 0.0299263}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Robot_Dest_Body
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe9a915790211f544848c55799d099b6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Dest_Body
       rect:
         serializedVersion: 2
         x: 108
@@ -318,7 +530,16 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Robot_Dest_ArmFront
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cc360e9470c0784c83ffccedd38e5af
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Dest_ArmFront
       rect:
         serializedVersion: 2
         x: 97
@@ -329,7 +550,16 @@ TextureImporter:
       pivot: {x: 0.623703, y: 0.97084665}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Robot_Dest_ArmBack
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b38a69e65480334489095a9bfd965ca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Dest_ArmBack
       rect:
         serializedVersion: 2
         x: 88
@@ -340,7 +570,16 @@ TextureImporter:
       pivot: {x: 0.54329586, y: 0.97084665}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Robot_Dest_LegFront
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c83951ec0087044988a194cee8f6bad
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Dest_LegFront
       rect:
         serializedVersion: 2
         x: 80
@@ -351,7 +590,16 @@ TextureImporter:
       pivot: {x: 0.6731842, y: 0.96626693}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Robot_Dest_LegBack
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1caa69c653cb4f440beca054729c6803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot_Dest_LegBack
       rect:
         serializedVersion: 2
         x: 74
@@ -362,8 +610,25 @@ TextureImporter:
       pivot: {x: 0.6731842, y: 0.96626693}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deafab9d8ff69bb4eb46e3f984fd7355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
