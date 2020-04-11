@@ -9,17 +9,27 @@ public class EnemyHealthManager : MonoBehaviour {
 	public float flashLength;
 	private float flashCounter;
 	private EnemyController theEC;
+	private Animator anim;
+	private Rigidbody2D myRB;
+	public float deathSpin;
 	// Use this for initialization
 	void Start () {
 		currentHealth = startingHealth;
 		theEC = GetComponent<EnemyController>();
+		anim = GetComponent<Animator>();
+		myRB = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(currentHealth <= 0)
 		{
-			gameObject.SetActive(false);
+			//gameObject.SetActive(false);
+			theEC.enabled = false;
+			anim.enabled = false;
+			myRB.constraints = RigidbodyConstraints2D.None;
+			myRB.AddTorque(deathSpin * -transform.localScale.x);
+			gameObject.layer = LayerMask.NameToLayer("Dead");
 		}
 		if(flashCounter > 0)
 		{
