@@ -12,6 +12,8 @@ public class EnemyHealthManager : MonoBehaviour {
 	private Animator anim;
 	private Rigidbody2D myRB;
 	public float deathSpin;
+	public Sprite[] brokenParts;
+	private bool dead;
 	// Use this for initialization
 	void Start () {
 		currentHealth = startingHealth;
@@ -22,7 +24,7 @@ public class EnemyHealthManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(currentHealth <= 0)
+		if(currentHealth <= 0 && !dead)
 		{
 			//gameObject.SetActive(false);
 			theEC.enabled = false;
@@ -30,6 +32,11 @@ public class EnemyHealthManager : MonoBehaviour {
 			myRB.constraints = RigidbodyConstraints2D.None;
 			myRB.AddTorque(deathSpin * -transform.localScale.x);
 			gameObject.layer = LayerMask.NameToLayer("Dead");
+			for(int i=0; i<bodyParts.Length; i++)
+			{
+				bodyParts[i].sprite = brokenParts[i];
+			}
+			dead = true;
 		}
 		if(flashCounter > 0)
 		{
