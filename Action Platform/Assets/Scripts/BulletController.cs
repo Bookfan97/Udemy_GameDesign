@@ -10,6 +10,7 @@ public class BulletController : MonoBehaviour {
 
 	public int damageToGive;
 
+	public GameObject impactEffect;
 	// Use this for initialization
 	void Start () {
 		myRB = GetComponent<Rigidbody2D>();
@@ -33,6 +34,8 @@ public class BulletController : MonoBehaviour {
 		{
 			other.gameObject.GetComponent<EnemyHealthManager>().TakeDamage(damageToGive);
 		}
+		GameObject impact = (GameObject) Instantiate(impactEffect, transform.position, transform.rotation);
+		impact.transform.localScale = transform.localScale;
 		Destroy(gameObject);
 	}
 }
