@@ -14,6 +14,9 @@ public class EnemyHealthManager : MonoBehaviour {
 	public float deathSpin;
 	public Sprite[] brokenParts;
 	private bool dead;
+	public GameObject explosion;
+	public Rigidbody2D[] RBParts;
+	public float explosionForce;
 	// Use this for initialization
 	void Start () {
 		currentHealth = startingHealth;
@@ -35,6 +38,13 @@ public class EnemyHealthManager : MonoBehaviour {
 			for(int i=0; i<bodyParts.Length; i++)
 			{
 				bodyParts[i].sprite = brokenParts[i];
+			}
+			Instantiate(explosion, transform.position, transform.rotation);
+			for(int i=0; i<RBParts.Length; i++)
+			{
+				RBParts[i].isKinematic = false;
+				RBParts[i].AddTorque(deathSpin);
+				RBParts[i].velocity = new Vector2(Random.Range(-explosionForce, explosionForce), Random.Range(-explosionForce, explosionForce));
 			}
 			dead = true;
 		}
