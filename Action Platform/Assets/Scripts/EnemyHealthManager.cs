@@ -8,9 +8,11 @@ public class EnemyHealthManager : MonoBehaviour {
 	public SpriteRenderer[] bodyParts;
 	public float flashLength;
 	private float flashCounter;
+	private EnemyController theEC;
 	// Use this for initialization
 	void Start () {
 		currentHealth = startingHealth;
+		theEC = GetComponent<EnemyController>();
 	}
 	
 	// Update is called once per frame
@@ -35,6 +37,7 @@ public class EnemyHealthManager : MonoBehaviour {
 	public void TakeDamage(int damage)
 	{
 		currentHealth -= damage;
+		theEC.Knockback();
 		Flash();
 	}
 
