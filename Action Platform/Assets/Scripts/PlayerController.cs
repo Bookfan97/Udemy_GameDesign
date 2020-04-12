@@ -117,6 +117,7 @@ public class PlayerController : MonoBehaviour {
 	public void Shoot()
 	{
 		Instantiate(bullet, bulletPoint.position, transform.rotation);
+		gunSound.pitch=Random.Range(0.5f, 1.5f);
 		gunSound.Play();
 		betweenShotCounter = waitBetweenShots;
 		muzzleFlash.SetActive(true);
