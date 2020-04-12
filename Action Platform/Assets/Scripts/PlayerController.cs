@@ -29,6 +29,11 @@ public class PlayerController : MonoBehaviour {
 
 	private CameraController theCamera;
 	public float shakeAmount;
+
+	public float knockbackForce;
+	public float knockbackLength;
+	private float knockbackCounter;
+	public bool knockBack;
 	// Use this for initialization
 	void Start () {
 		myRB = GetComponent<Rigidbody2D>();
@@ -45,30 +50,42 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 
 		muzzleFlash.SetActive(false);
-		myRB.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, myRB.velocity.y);
-
-		if(Input.GetButtonDown("Jump") && grounded)
+		if (knockBack)
 		{
-			myRB.velocity = new Vector2(myRB.velocity.x, jumpSpeed);
-			jumpSound.Play();
+			knockbackCounter -= Time.deltaTime;
+			myRB.velocity = new Vector2(-knockbackForce * transform.localScale.x, myRB.velocity.y);
+			if (knockbackCounter <= 0)
+			{
+				knockBack = false;
+			}
 		}
-
-		if(Input.GetAxisRaw("Horizontal") > 0 && transform.localScale.x < 0)
-			transform.localScale = new Vector3(1f, 1f, 1f);
-		if(Input.GetAxisRaw("Horizontal") < 0 && transform.localScale.x > 0)
-			transform.localScale = new Vector3(-1f, 1f, 1f);
-		
-		if(Input.GetButtonDown("Fire1"))
+		else
 		{
-			Shoot();
-		}
+			myRB.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, myRB.velocity.y);
 
-		if(Input.GetButton("Fire1"))
-		{
-			betweenShotCounter -= Time.deltaTime;
-			if(betweenShotCounter<=0)
+			if (Input.GetButtonDown("Jump") && grounded)
+			{
+				myRB.velocity = new Vector2(myRB.velocity.x, jumpSpeed);
+				jumpSound.Play();
+			}
+
+			if (Input.GetAxisRaw("Horizontal") > 0 && transform.localScale.x < 0)
+				transform.localScale = new Vector3(1f, 1f, 1f);
+			if (Input.GetAxisRaw("Horizontal") < 0 && transform.localScale.x > 0)
+				transform.localScale = new Vector3(-1f, 1f, 1f);
+
+			if (Input.GetButtonDown("Fire1"))
 			{
 				Shoot();
+			}
+
+			if (Input.GetButton("Fire1"))
+			{
+				betweenShotCounter -= Time.deltaTime;
+				if (betweenShotCounter <= 0)
+				{
+					Shoot();
+				}
 			}
 		}
 
@@ -92,5 +109,12 @@ public class PlayerController : MonoBehaviour {
 			Debug.Log("On Enemy");
 			myRB.velocity = new Vector2(myRB.velocity.x, jumpSpeed * 0.75f);
 		}
+	}
+
+	public void Knockback()
+	{
+		knockbackCounter = knockbackLength;
+		myRB.velocity = new Vector2(-knockbackForce * transform.localScale.x, knockbackForce);
+		knockBack = true;
 	}
 }
