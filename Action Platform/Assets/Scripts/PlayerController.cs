@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour {
 	public bool knockBack;
 
 	private PlayerHealthManager playerHealth;
+
+	public int numBullets;
+
 	// Use this for initialization
 	void Start () {
 		myRB = GetComponent<Rigidbody2D>();
@@ -116,7 +119,10 @@ public class PlayerController : MonoBehaviour {
 
 	public void Shoot()
 	{
-		Instantiate(bullet, bulletPoint.position, transform.rotation);
+		for(int i =0; i<numBullets; i++)
+		{
+			Instantiate(bullet, bulletPoint.position, transform.rotation);
+		}
 		gunSound.pitch=Random.Range(0.5f, 1.5f);
 		gunSound.Play();
 		betweenShotCounter = waitBetweenShots;
