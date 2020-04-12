@@ -9,18 +9,23 @@ public class PlayerHealthManager : MonoBehaviour {
 	public SpriteRenderer[] bodyParts;
 	public float flashLength;
 	private float flashCounter;
-
+	private Animator anim;
+	public bool dead;
 	// Use this for initialization
 	void Start () {
 		thePC = GetComponent<PlayerController>();
+		anim = GetComponent<Animator>();
 		currentHealth = startingHealth;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(currentHealth <= 0)
+		if(currentHealth <= 0 && !dead)
 		{
-			gameObject.SetActive(false);
+			//gameObject.SetActive(false);
+			anim.SetTrigger("Dead");
+			gameObject.layer = LayerMask.NameToLayer("PDead");
+			dead = true;
 		}
 		if (flashCounter > 0)
 		{

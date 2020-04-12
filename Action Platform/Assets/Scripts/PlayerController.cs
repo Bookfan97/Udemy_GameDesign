@@ -34,11 +34,14 @@ public class PlayerController : MonoBehaviour {
 	public float knockbackLength;
 	private float knockbackCounter;
 	public bool knockBack;
+
+	private PlayerHealthManager playerHealth;
 	// Use this for initialization
 	void Start () {
 		myRB = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
 		theCamera = FindObjectOfType<CameraController>();
+		playerHealth = GetComponent<PlayerHealthManager>();
 	}
 
 	void FixedUpdate()
@@ -59,7 +62,7 @@ public class PlayerController : MonoBehaviour {
 				knockBack = false;
 			}
 		}
-		else
+		else if (!playerHealth.dead)
 		{
 			myRB.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, myRB.velocity.y);
 
@@ -87,6 +90,19 @@ public class PlayerController : MonoBehaviour {
 					Shoot();
 				}
 			}
+		}
+
+		if(playerHealth.dead)
+		{
+			if(myRB.velocity.x>.1f)
+			{
+				myRB.velocity = new Vector2(myRB.velocity.x / 2, myRB.velocity.y);
+			}
+			else
+			{
+				myRB.velocity = new Vector2(0,myRB.velocity.y);
+			}
+			
 		}
 
 		anim.SetFloat("Speed", Mathf.Abs(myRB.velocity.x));
