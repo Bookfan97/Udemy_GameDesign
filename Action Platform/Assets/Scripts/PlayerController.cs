@@ -72,14 +72,15 @@ public class PlayerController : MonoBehaviour {
 				jumpSound.Play();
 			}
 
-			if (Input.GetAxisRaw("Horizontal") > 0 && transform.localScale.x < 0)
+			if (Input.GetAxisRaw("Horizontal") > 0 && transform.localScale.x < 0 && betweenShotCounter == 0)
 				transform.localScale = new Vector3(1f, 1f, 1f);
-			if (Input.GetAxisRaw("Horizontal") < 0 && transform.localScale.x > 0)
+			if (Input.GetAxisRaw("Horizontal") < 0 && transform.localScale.x > 0 && betweenShotCounter == 0)
 				transform.localScale = new Vector3(-1f, 1f, 1f);
 
 			if (Input.GetButtonDown("Fire1"))
 			{
 				Shoot();
+				betweenShotCounter = waitBetweenShots;
 			}
 
 			if (Input.GetButton("Fire1"))
@@ -89,6 +90,10 @@ public class PlayerController : MonoBehaviour {
 				{
 					Shoot();
 				}
+			}
+			if(Input.GetButtonUp("Fire1"))
+			{
+				betweenShotCounter = 0;
 			}
 		}
 
