@@ -25,6 +25,7 @@ public class PlayerHealthManager : MonoBehaviour {
 			//gameObject.SetActive(false);
 			anim.SetTrigger("Dead");
 			gameObject.layer = LayerMask.NameToLayer("PDead");
+			Time.timeScale = 0.5f;
 			dead = true;
 		}
 		if (flashCounter > 0)
